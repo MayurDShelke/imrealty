@@ -30,8 +30,8 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-700 px-6 py-4 md:px-16 md:py-6",
-        isScrolled ? "glass-dark !py-3" : "bg-transparent"
+        "fixed top-0 left-0 w-full z-50 transition-all duration-700 px-6 pt-8 pb-4 md:px-16 md:py-4",
+        isScrolled ? "glass-dark !py-2" : "bg-transparent"
       )}
     >
       <div className="max-w-[1800px] mx-auto flex justify-between items-center">
@@ -47,15 +47,15 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-16">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-[10px] uppercase tracking-[0.4em] text-white/70 hover:text-primary-red transition-colors duration-300 font-medium"
-            >
-              {link.name}
-            </Link>
-          ))}
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-[10px] uppercase tracking-[0.4em] text-white/70 hover:text-primary-red transition-colors duration-300 font-medium"
+              >
+                {link.name}
+              </Link>
+            ))}
           <button className="text-white hover:text-primary-red transition-colors duration-300">
             <Menu size={24} />
           </button>
@@ -91,7 +91,7 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="flex space-x-8 pt-10">
-              <span className="text-[10px] uppercase tracking-widest text-silver">IG</span>
+              <a href="https://www.instagram.com/imrealty.in/" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-silver hover:text-primary-red transition-colors">IG</a>
               <span className="text-[10px] uppercase tracking-widest text-silver">FB</span>
               <span className="text-[10px] uppercase tracking-widest text-silver">TW</span>
             </div>

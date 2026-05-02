@@ -4,14 +4,14 @@ import Footer from "@/components/layout/Footer";
 
 export default function FeaturesPage() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-black overflow-x-hidden">
       <Navbar />
       
       {/* Page Hero */}
-      <div className="pt-40 pb-20 px-6 md:px-24">
-        <div className="max-w-7xl mx-auto border-l border-primary-red pl-12">
-          <p className="text-primary-red text-xs font-bold tracking-[0.5em] uppercase mb-6">Experience / 02</p>
-          <h1 className="text-6xl md:text-9xl font-bold uppercase tracking-tighter leading-none text-white">
+      <div className="pt-32 md:pt-40 pb-20 px-6 md:px-24">
+        <div className="max-w-7xl mx-auto border-l border-primary-red pl-6 md:pl-12">
+          <p className="text-primary-red text-[10px] md:text-xs font-bold tracking-[0.5em] uppercase mb-6">Experience / 02</p>
+          <h1 className="text-4xl md:text-9xl font-bold uppercase tracking-tighter leading-none text-white">
             Life <br /> Uncompromised
           </h1>
         </div>

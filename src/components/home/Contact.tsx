@@ -9,11 +9,8 @@ const Contact = () => {
   const [selectedProject, setSelectedProject] = useState("");
 
   const projects = [
-    "The Monolith / Alps",
-    "Zenith Plaza / Dubai",
-    "Azure Heights / Malibu",
-    "Elysium Grove / Tuscany",
-    "General Architectural Inquiry"
+    "Elevation",
+    "Sunraj Solitaire",
   ];
 
   return (
@@ -28,7 +25,7 @@ const Contact = () => {
         >
           {/* Section ID tag */}
           <div className="mb-8">
-            <span className="text-[10px] font-bold text-primary-red uppercase tracking-[0.6em]">Inquiry / Portal</span>
+            <span className="text-[10px] font-bold text-primary-red uppercase tracking-[0.6em]">Inquiry </span>
           </div>
 
           <h1 className="text-5xl md:text-8xl font-bold tracking-tighter uppercase leading-none mb-12 text-white">
@@ -38,24 +35,24 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
             <div className="space-y-8">
               <p className="text-[10px] uppercase tracking-widest leading-loose text-white/50 max-w-xs">
-                Strategic acquisition and architectural consultations are managed through our private portal. 
+                Strategic acquisition and architectural consultations are managed through our private portal.
               </p>
-              
+
               <div className="space-y-6">
-                <div>
+                {/* <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary-red mb-2">Direct Channel</h4>
-                  <p className="text-sm font-medium">Julian Vance</p>
-                  <p className="text-xs text-white/40">j.vance@iamrealty.tech</p>
-                </div>
+                  <p className="text-sm font-medium">Kaustubh & sachin</p>
+                  <p className="text-xs text-white/40">imrealtyoffical@gmail.com</p>
+                </div> */}
               </div>
             </div>
 
             <div className="space-y-6">
-              <div>
+              {/* <div>
                 <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary-red mb-2">Technical Support</h4>
-                <p className="text-xs text-white/40">support@iamrealty.tech</p>
-                <p className="text-xs text-white/40">+41 22 555 0192</p>
-              </div>
+                <p className="text-xs text-white/40">imrealtyoffical@gmail.com</p>
+                <p className="text-xs text-white/40">+91 00000 00000</p>
+              </div> */}
             </div>
           </div>
 
@@ -64,28 +61,28 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div className="relative group">
                 <label className="text-[8px] uppercase tracking-widest text-primary-red font-bold mb-2 block">Name / Entity</label>
-                <input 
-                  type="text" 
-                  placeholder="Enter your name" 
-                  className="w-full bg-transparent border-b border-white/10 py-3 text-[10px] uppercase tracking-widest placeholder:text-white/20 focus:outline-none focus:border-primary-red transition-all duration-500"
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  className="w-full bg-transparent border-b border-white/30 py-3 text-[10px] uppercase tracking-widest placeholder:text-white/50 focus:outline-none focus:border-primary-red transition-all duration-500"
                 />
               </div>
               <div className="relative group">
                 <label className="text-[8px] uppercase tracking-widest text-primary-red font-bold mb-2 block">Secure Email</label>
-                <input 
-                  type="email" 
-                  placeholder="Enter email address" 
-                  className="w-full bg-transparent border-b border-white/10 py-3 text-[10px] uppercase tracking-widest placeholder:text-white/20 focus:outline-none focus:border-primary-red transition-all duration-500"
+                <input
+                  type="email"
+                  placeholder="Enter email address"
+                  className="w-full bg-transparent border-b border-white/30 py-3 text-[10px] uppercase tracking-widest placeholder:text-white/50 focus:outline-none focus:border-primary-red transition-all duration-500"
                 />
               </div>
             </div>
 
             <div className="relative group">
               <label className="text-[8px] uppercase tracking-widest text-primary-red font-bold mb-2 block">Project Selection</label>
-              <select 
+              <select
                 value={selectedProject}
                 onChange={(e) => setSelectedProject(e.target.value)}
-                className="w-full bg-transparent border-b border-white/10 py-3 text-[10px] uppercase tracking-widest focus:outline-none focus:border-primary-red transition-all appearance-none text-white font-medium"
+                className="w-full bg-transparent border-b border-white/30 py-3 text-[10px] uppercase tracking-widest focus:outline-none focus:border-primary-red transition-all appearance-none text-white font-medium"
               >
                 <option value="" disabled className="bg-black">SELECT PROJECT OF INTEREST</option>
                 {projects.map((p) => (
@@ -97,14 +94,14 @@ const Contact = () => {
 
             <div className="relative group">
               <label className="text-[8px] uppercase tracking-widest text-primary-red font-bold mb-2 block">Message / Intent</label>
-              <textarea 
-                placeholder="Describe your architectural vision" 
+              <textarea
+                placeholder="Describe your architectural vision"
                 rows={3}
-                className="w-full bg-transparent border-b border-white/10 py-3 text-[10px] uppercase tracking-widest placeholder:text-white/20 focus:outline-none focus:border-primary-red transition-all duration-500 resize-none"
+                className="w-full bg-transparent border-b border-white/30 py-3 text-[10px] uppercase tracking-widest placeholder:text-white/50 focus:outline-none focus:border-primary-red transition-all duration-500 resize-none"
               />
             </div>
 
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="w-full md:w-auto px-12 py-4 bg-primary-red text-[10px] font-bold uppercase tracking-[0.5em] flex items-center justify-center space-x-6 hover:bg-white hover:text-black transition-all duration-700 shadow-xl shadow-primary-red/10"
@@ -118,10 +115,10 @@ const Contact = () => {
 
       {/* --- Right Side: Cinematic Image --- */}
       <div className="w-full lg:w-[40%] h-[50vh] lg:h-auto relative order-first lg:order-last border-l border-white/5">
-        <Image 
-          src="/images/project1.png" 
-          alt="Contact Visual" 
-          fill 
+        <Image
+          src="/images/project1.png"
+          alt="Contact Visual"
+          fill
           className="object-cover grayscale brightness-50 contrast-125 hover:grayscale-0 transition-all duration-1000"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] lg:hidden" />

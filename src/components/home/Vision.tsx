@@ -3,12 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronRight, Maximize2, Zap } from "lucide-react";
+import Link from "next/link";
 
 const Vision = () => {
   const categories = [
-    { id: "01", title: "Sustainable Tech", desc: "Passive cooling & solar integration", img: "/images/project1.png" },
-    { id: "02", title: "Neural Homes", desc: "AI-driven environmental adaptation", img: "/images/project2.png" },
-    { id: "03", title: "Biophilic Design", desc: "Living walls & air filtration", img: "/images/project3.png" },
+    { id: "01", title: "Premium Living", desc: "Elevation & structural design", img: "/images/Elevation.jpg" },
+    { id: "02", title: "Wellness First", desc: "Clubhouse & social amenities", img: "/images/Clubhouse.jpg" },
+    { id: "03", title: "Aqua Lifestyle", desc: "Infinity pool & deck spaces", img: "/images/SwimmigPool.jpg" },
   ];
 
   return (
@@ -25,14 +26,14 @@ const Vision = () => {
       </div>
 
       {/* Grid Lines - Following Hero Layout */}
-      <div className="absolute inset-0 z-10 pointer-events-none opacity-20">
-        <div className="h-full w-[1px] bg-white absolute right-24 md:right-32 top-0" />
-        <div className="h-full w-[1px] bg-white absolute left-24 md:left-32 top-0" />
+      <div className="absolute inset-0 z-10 pointer-events-none opacity-10 md:opacity-20">
+        <div className="h-full w-[1px] bg-white absolute right-8 md:right-32 top-0 hidden md:block" />
+        <div className="h-full w-[1px] bg-white absolute left-8 md:left-32 top-0 hidden md:block" />
         <div className="w-full h-[1px] bg-white absolute top-1/2 left-0" />
       </div>
 
       {/* Vertical Data - Left */}
-      <div className="absolute left-8 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center space-y-12 mix-blend-difference">
+      <div className="absolute left-8 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center space-y-12 mix-blend-difference">
         <span className="text-[10px] uppercase tracking-[0.5em] rotate-180 [writing-mode:vertical-lr] text-primary-red font-bold">
           Coordinates 46.2044° N
         </span>
@@ -43,7 +44,7 @@ const Vision = () => {
       </div>
 
       {/* Vertical Data - Right */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center space-y-12">
+      <div className="absolute right-8 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center space-y-12">
         <div className="w-[1px] h-20 bg-white/30" />
         <span className="text-[10px] uppercase tracking-[0.5em] [writing-mode:vertical-lr] text-white/40">
           Established 2024
@@ -60,28 +61,30 @@ const Vision = () => {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-[80px] md:text-[200px] font-serif text-white/5 absolute -top-16 md:-top-48 -left-4 md:-left-20 pointer-events-none">
+            <span className="text-[80px] md:text-[200px] font-serif text-white/5 absolute -top-12 md:-top-48 -left-2 md:-left-20 pointer-events-none">
               02
             </span>
-            <h2 className="text-3xl md:text-7xl font-serif leading-[1.1] mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-7xl font-serif leading-[1.1] mb-8 md:mb-12">
               The Architecture <br />
               <span className="italic text-primary-red">of Future </span> <br />
               Humanity.
             </h2>
             
-            <p className="text-[10px] md:text-sm uppercase tracking-[0.3em] text-white/40 mb-8 md:mb-12 max-w-lg leading-relaxed">
+            <p className="text-[9px] md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/40 mb-8 md:mb-12 max-w-lg leading-relaxed">
               We don't just build structures; we curate the physical manifestation of your strategic intent. Every line is a decision. Every shadow is a luxury.
             </p>
 
-            <motion.button 
-              whileHover={{ x: 10 }}
-              className="group flex items-center space-x-4 md:space-x-6 text-[8px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.6em] font-bold"
-            >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-primary-red flex items-center justify-center group-hover:bg-primary-red transition-all duration-500">
-                <ChevronRight size={14} className="text-primary-red group-hover:text-white" />
-              </div>
-              <span>Start the Journey</span>
-            </motion.button>
+            <Link href="/contact">
+              <motion.button 
+                whileHover={{ x: 10 }}
+                className="group flex items-center space-x-4 md:space-x-6 text-[8px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.6em] font-bold"
+              >
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-primary-red flex items-center justify-center group-hover:bg-primary-red transition-all duration-500">
+                  <ChevronRight size={14} className="text-primary-red group-hover:text-white" />
+                </div>
+                <span>Start the Journey</span>
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </div>
@@ -91,23 +94,32 @@ const Vision = () => {
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between space-y-8 md:space-y-0">
           <div className="flex space-x-6 overflow-x-auto no-scrollbar w-full md:w-auto pb-4 md:pb-0">
             {categories.map((cat, i) => (
-              <motion.div
-                key={cat.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2, duration: 0.8 }}
-                className="group cursor-pointer min-w-[180px] md:min-w-[200px]"
-              >
-                <div className="relative w-full h-24 md:h-32 overflow-hidden mb-4 border border-white/10 group-hover:border-primary-red transition-colors duration-500">
-                  <Image src={cat.img} alt={cat.title} fill className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" />
-                  <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-md px-2 py-1 text-[8px] font-bold tracking-widest text-primary-red">
-                    {cat.id}
+              <Link href="/projects" key={cat.id}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.2, duration: 0.8 }}
+                  className="group cursor-pointer min-w-[180px] md:min-w-[200px]"
+                >
+                  <div className="relative w-full h-24 md:h-32 overflow-hidden mb-4 border border-white/10 group-hover:border-primary-red transition-colors duration-500">
+                    <motion.div
+                      initial={{ filter: "grayscale(100%) brightness(50%)" }}
+                      whileInView={{ filter: "grayscale(0%) brightness(100%)" }}
+                      viewport={{ once: false, amount: 0.8 }}
+                      transition={{ duration: 0.8 }}
+                      className="h-full w-full"
+                    >
+                      <Image src={cat.img} alt={cat.title} fill className="object-cover group-hover:scale-110 transition-all duration-700" />
+                    </motion.div>
+                    <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-md px-2 py-1 text-[8px] font-bold tracking-widest text-primary-red">
+                      {cat.id}
+                    </div>
                   </div>
-                </div>
-                <h4 className="text-[10px] uppercase tracking-widest font-bold mb-1">{cat.title}</h4>
-                <p className="text-[8px] uppercase tracking-widest text-white/40">{cat.desc}</p>
-              </motion.div>
+                  <h4 className="text-[10px] uppercase tracking-widest font-bold mb-1">{cat.title}</h4>
+                  <p className="text-[8px] uppercase tracking-widest text-white/40">{cat.desc}</p>
+                </motion.div>
+              </Link>
             ))}
           </div>
 

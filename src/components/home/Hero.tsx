@@ -2,14 +2,15 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Globe, Mail, Phone, ChevronRight } from "lucide-react";
 
 const Hero = () => {
   const carouselItems = [
-    { title: "The Monolith", location: "Swiss Alps", img: "/images/project1.png" },
-    { title: "Zenith Plaza", location: "Dubai", img: "/images/project2.png" },
-    { title: "Azure Heights", location: "Malibu", img: "/images/project3.png" },
-    { title: "Elysium Grove", location: "Tuscany", img: "/images/about.png" },
+    { title: "Sunraj Solitaire", location: "Dombivli", img: "/images/Elevation.jpg" },
+    { title: "The Wellness Club", location: "Dombivli", img: "/images/Clubhouse.jpg" },
+    { title: "Aqua Horizon", location: "Dombivli", img: "/images/SwimmigPool.jpg" },
+    { title: "Luxury Interiors", location: "Dombivli", img: "/images/WhatsApp Image 2026-01-08 at 2.21.07 PM.jpeg" },
   ];
 
   return (
@@ -17,7 +18,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero.png"
+          src="/images/Elevation.jpg"
           alt="Luxury Real Estate"
           fill
           className="object-cover opacity-70"
@@ -28,9 +29,9 @@ const Hero = () => {
 
       {/* Grid Lines Overlay */}
       <div className="absolute inset-0 z-10 pointer-events-none">
-        <div className="h-full w-[1px] bg-white/20 absolute right-8 md:right-32 top-0" />
-        <div className="w-full h-[1px] bg-white/20 absolute top-24 md:top-32 left-0" />
-        <div className="h-full w-[1px] bg-white/5 absolute left-8 md:left-24 top-0 hidden md:block" />
+        <div className="h-full w-[1px] bg-white/10 absolute right-4 md:right-32 top-0 hidden md:block" />
+        <div className="w-full h-[1px] bg-white/10 absolute top-20 md:top-32 left-0" />
+        <div className="h-full w-[1px] bg-white/5 absolute left-4 md:left-24 top-0 hidden md:block" />
       </div>
 
       {/* Main Content */}
@@ -41,10 +42,10 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <span className="text-7xl md:text-[150px] font-serif text-white/10 absolute -top-20 md:-top-32 -left-4 md:-left-12">
+            <span className="text-6xl md:text-[150px] font-serif text-white/5 absolute -top-12 md:-top-32 -left-2 md:-left-12">
               01
             </span>
-            <h1 className="text-4xl md:text-7xl font-serif leading-tight mb-8">
+            <h1 className="text-3xl md:text-7xl font-serif leading-tight mb-8 tracking-tight">
               Architectural <br />
               <span className="italic text-primary-red">Excellence</span> <br />
               Begins Here.
@@ -55,19 +56,23 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="flex items-center space-x-6"
+            className="flex items-center space-x-4 md:space-x-6"
           >
-            <button className="px-8 py-3 border border-white/30 text-[10px] uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all duration-500 backdrop-blur-sm">
-              Learn More
-            </button>
-            <div className="w-12 h-[1px] bg-white/30" />
-            <span className="text-[10px] uppercase tracking-[0.4em] text-white/50">Discover</span>
+            <Link href="/about">
+              <button className="px-6 md:px-8 py-3 border border-white/30 text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.4em] hover:bg-white hover:text-black transition-all duration-500 backdrop-blur-sm">
+                Learn More
+              </button>
+            </Link>
+            <div className="w-8 md:w-12 h-[1px] bg-white/30" />
+            <Link href="/projects">
+              <span className="text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.4em] text-white/50 cursor-pointer hover:text-white transition-colors">Discover</span>
+            </Link>
           </motion.div>
         </div>
       </div>
 
       {/* Left Sidebar - Scroll Down */}
-      <div className="absolute left-8 bottom-12 z-20 hidden md:flex flex-col items-center space-y-8">
+      <div className="absolute left-4 md:left-8 bottom-12 z-20 hidden md:flex flex-col items-center space-y-8">
         <div className="h-24 w-[1px] bg-gradient-to-b from-transparent via-white/50 to-white" />
         <span className="text-[10px] uppercase tracking-[0.5em] rotate-180 [writing-mode:vertical-lr] text-white/70">
           Scroll Down
@@ -75,7 +80,7 @@ const Hero = () => {
       </div>
 
       {/* Right Sidebar - Socials */}
-      <div className="absolute right-8 md:right-10 top-1/2 -translate-y-1/2 z-20 flex flex-col space-y-10 items-center">
+      <div className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col space-y-10 items-center">
         <Globe size={18} className="text-white/40 hover:text-primary-red cursor-pointer transition-colors" />
         <Mail size={18} className="text-white/40 hover:text-primary-red cursor-pointer transition-colors" />
         <Phone size={18} className="text-white/40 hover:text-primary-red cursor-pointer transition-colors" />
@@ -91,9 +96,8 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 + index * 0.1, duration: 0.5 }}
-              className={`min-w-[200px] md:min-w-[300px] glass p-4 group cursor-pointer transition-all duration-500 ${
-                index === 0 ? "border-primary-red/50 bg-white/5" : "border-white/5"
-              }`}
+              className={`min-w-[200px] md:min-w-[300px] glass p-4 group cursor-pointer transition-all duration-500 ${index === 0 ? "border-primary-red/50 bg-white/5" : "border-white/5"
+                }`}
             >
               <div className="flex space-x-4 items-center">
                 <div className="relative w-16 h-12 overflow-hidden bg-zinc-800">
@@ -105,10 +109,10 @@ const Hero = () => {
                 </div>
               </div>
               {index === 0 && (
-                <div className="mt-4 flex items-center justify-between">
+                <Link href="/projects" className="mt-4 flex items-center justify-between group/link">
                   <span className="text-[8px] uppercase tracking-widest text-primary-red font-bold">Explore</span>
-                  <ChevronRight size={12} className="text-primary-red" />
-                </div>
+                  <ChevronRight size={12} className="text-primary-red group-hover/link:translate-x-1 transition-transform" />
+                </Link>
               )}
             </motion.div>
           ))}

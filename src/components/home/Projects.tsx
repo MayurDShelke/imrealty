@@ -2,132 +2,150 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, Plus } from "lucide-react";
 
-const projects = [
+const projectModules = [
   {
     id: "01",
-    title: "The Monolith",
-    location: "Swiss Alps",
-    image: "/images/project1.png",
-    details: ["Concrete Shell", "Glass Facade", "4,200 sqft"],
-    status: "Completed"
+    title: "The Elevation",
+    desc: "A vertical masterpiece redefining the skyline of Dombivli. Sunraj Solitaire stands as a testament to modern architectural ambition.",
+    image: "/images/Elevation.jpg",
+    tags: ["Iconic Design", "Premium Facade", "Structural Brilliance"]
   },
   {
     id: "02",
-    title: "Zenith Plaza",
-    location: "Dubai Marina",
-    image: "/images/project2.png",
-    details: ["Sky Garden", "Smart Integration", "Penthouse"],
-    status: "Under Construction"
+    title: "The Wellness Club",
+    desc: "A sanctuary for the body and mind. Our state-of-the-art clubhouse offers world-class fitness and social experiences.",
+    image: "/images/Clubhouse.jpg",
+    tags: ["Designer Gym", "Social Hub", "Premium Spa"]
   },
   {
     id: "03",
-    title: "Azure Heights",
-    location: "Malibu Coast",
-    image: "/images/project3.png",
-    details: ["Infinity Pool", "Carbon Neutral", "Private Beach"],
-    status: "Private Sale"
+    title: "Aqua Horizon",
+    desc: "Experience tranquility at our infinity pool, where water meets the sky in a seamless blend of luxury and relaxation.",
+    image: "/images/SwimmigPool.jpg",
+    tags: ["Infinity Pool", "Sunken Deck", "Ambient Lighting"]
   },
+  {
+    id: "04",
+    title: "Architectural Detail",
+    desc: "Every corner of Solitaire is meticulously crafted to ensure a life of unparalleled elegance and comfort.",
+    image: "/images/WhatsApp Image 2026-01-08 at 2.21.07 PM.jpeg",
+    tags: ["Grand Lobby", "Bespoke Interiors", "Elite Finish"]
+  },
+  {
+    id: "05",
+    title: "The Promenade",
+    desc: "Lush green spaces and open walkways designed to bring you closer to nature while living in the heart of the city.",
+    image: "/images/WhatsApp Image 2026-01-08 at 2.29.20 PM.jpeg",
+    tags: ["Landscape Design", "Open Spaces", "Evening Trails"]
+  }
 ];
 
 const Projects = () => {
   return (
     <section className="bg-black py-24 md:py-40 px-6 md:px-24 overflow-hidden relative">
       {/* Background Decorative Lines */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-10">
-        <div className="h-full w-[1px] bg-white absolute left-8 md:left-32" />
-        <div className="h-full w-[1px] bg-white absolute right-8 md:right-32" />
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-5">
+        <div className="h-full w-[1px] bg-white absolute left-4 md:left-32 hidden md:block" />
+        <div className="h-full w-[1px] bg-white absolute right-4 md:right-32 hidden md:block" />
+        <div className="w-full h-[1px] bg-white absolute top-1/2" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 md:mb-32 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <span className="text-primary-red text-[10px] font-bold tracking-[0.5em] uppercase mb-6 block">Portfolio / 2024</span>
-            <h2 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter leading-none">
-              Selected <br /> <span className="text-white/10 italic font-serif">Curations</span>
+            <span className="text-primary-red text-[10px] font-bold tracking-[0.5em] uppercase mb-6 block">Flagship Development / 2026</span>
+            <h2 className="text-4xl md:text-8xl font-bold uppercase tracking-tighter leading-none">
+              Elevation<br /> <span className="text-white/10 italic font-serif lowercase"></span>
             </h2>
+            <div className="flex items-center space-x-4 mt-8">
+              <div className="w-12 h-[1px] bg-primary-red" />
+              <p className="text-[10px] uppercase tracking-[0.4em] text-silver/60">Dombivli, Thane</p>
+            </div>
           </motion.div>
-          <motion.p 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="max-w-md text-silver/40 text-[10px] uppercase tracking-widest leading-loose text-left md:text-right"
+            className="max-w-md text-silver/40 text-[9px] md:text-[10px] uppercase tracking-widest leading-loose text-left md:text-right"
           >
-            Our portfolio is limited by choice. We only engage in projects that challenge the boundaries of contemporary architecture and sustainable luxury.
-          </motion.p>
+            <p>Our commitment to excellence is embodied in Sunraj Solitaire. A singular vision of luxury that combines next-generation engineering with timeless aesthetic appeal.</p>
+            <Link href="/contact">
+              <button className="mt-8 px-8 md:px-10 py-3 md:py-4 bg-white text-black text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] hover:bg-primary-red hover:text-white transition-all duration-500">
+                Download Brochure
+              </button>
+            </Link>
+          </motion.div>
         </div>
 
-        <div className="space-y-32 md:space-y-48">
-          {projects.map((project, index) => (
-            <motion.div 
-              key={project.id}
+        <div className="space-y-24 md:space-y-64">
+          {projectModules.map((module, index) => (
+            <motion.div
+              key={module.id}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="group grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              className={`group flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-20 items-center`}
             >
-              {/* Project Info */}
-              <div className="lg:col-span-5 relative z-10 order-2 lg:order-1">
-                <span className="text-7xl md:text-[180px] font-bold text-white/5 absolute -top-12 md:-top-32 left-0 -z-10 group-hover:text-primary-red/10 transition-colors duration-1000 tracking-tighter">
-                  {project.id}
-                </span>
-                <div className="space-y-6 pt-12 md:pt-24">
-                  <h3 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter group-hover:text-primary-red transition-colors duration-500">
-                    {project.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {project.details.map((detail) => (
-                      <span key={detail} className="bg-white/5 backdrop-blur-md border border-white/10 px-4 py-1.5 text-[8px] uppercase tracking-widest text-silver/60">
-                        {detail}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="pt-8 flex items-center space-x-12 border-t border-white/5">
-                    <div>
-                      <p className="text-[8px] uppercase tracking-widest text-silver/30 mb-1 font-bold">Location</p>
-                      <p className="text-[10px] uppercase tracking-widest font-bold">{project.location}</p>
-                    </div>
-                    <div>
-                      <p className="text-[8px] uppercase tracking-widest text-silver/30 mb-1 font-bold">Status</p>
-                      <p className="text-[10px] uppercase tracking-widest font-bold text-primary-red">{project.status}</p>
-                    </div>
-                  </div>
-                  <button className="flex items-center space-x-4 pt-10 text-white/40 hover:text-white transition-colors uppercase text-[10px] tracking-[0.4em] font-bold">
-                    <span>View Case Study</span>
-                    <ArrowUpRight size={16} className="text-primary-red" />
-                  </button>
+              {/* Module Image */}
+              <div className="w-full lg:w-7/12 relative h-[400px] md:h-[700px] overflow-hidden group">
+                <motion.div
+                  initial={{ filter: "grayscale(100%) brightness(60%)" }}
+                  whileInView={{ filter: "grayscale(0%) brightness(100%)" }}
+                  viewport={{ once: false, amount: 0.6 }}
+                  transition={{ duration: 1 }}
+                  className="h-full w-full"
+                >
+                  <Image
+                    src={module.image}
+                    alt={module.title}
+                    fill
+                    className="object-cover transition-all duration-1000 md:grayscale md:group-hover:grayscale-0 md:brightness-[0.6] md:group-hover:brightness-100"
+                  />
+                </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                <div className="absolute top-10 right-10 z-20">
+                  <span className="text-white/20 text-6xl font-serif italic group-hover:text-primary-red transition-colors duration-1000">{module.id}</span>
                 </div>
               </div>
 
-              {/* Project Image */}
-              <div className="lg:col-span-7 relative h-[350px] md:h-[600px] w-full overflow-hidden order-1 lg:order-2 border border-white/5">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 1.5, ease: "easeOut" }}
-                  className="h-full w-full"
+              {/* Module Info */}
+              <div className="w-full lg:w-5/12 space-y-10">
+                <motion.span
+                  className="text-primary-red text-[10px] font-bold tracking-[0.6em] uppercase"
                 >
-                  <Image 
-                    src={project.image} 
-                    alt={project.title} 
-                    fill 
-                    className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 brightness-75 hover:brightness-100" 
-                  />
-                </motion.div>
-                {/* Decorative Elements */}
-                <div className="absolute top-8 right-8 z-20">
-                  <div className="w-12 h-12 bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center">
-                    <Plus className="text-primary-red group-hover:rotate-90 transition-transform duration-500" />
-                  </div>
+                  Phase / 0{index + 1}
+                </motion.span>
+                <h3 className="text-4xl md:text-6xl font-serif italic tracking-tighter leading-tight group-hover:text-primary-red transition-colors duration-500">
+                  {module.title}
+                </h3>
+                <p className="text-silver/40 text-sm leading-loose max-w-sm">
+                  {module.desc}
+                </p>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  {module.tags.map((tag) => (
+                    <span key={tag} className="text-[8px] uppercase tracking-widest text-white/40 border border-white/10 px-4 py-2 hover:border-primary-red hover:text-white transition-colors cursor-default">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-primary-red to-transparent" />
+                <div className="pt-8">
+                  <Link href="/projects" className="flex items-center space-x-6 group/btn">
+                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:border-primary-red transition-colors">
+                      <Plus size={16} className="text-white group-hover/btn:text-primary-red transition-colors" />
+                    </div>
+                    <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-white/50 group-hover/btn:text-white transition-colors">Learn More</span>
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}

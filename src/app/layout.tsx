@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Noto_Serif, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 
-const notoSerif = Noto_Serif({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-noto-serif",
-  weight: ["300", "400", "500", "700"],
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
-const manrope = Manrope({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-manrope",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Aeterna Luxe | Premium Luxury Real Estate",
-  description: "Experience the pinnacle of architectural excellence. Modern, minimalist, and exclusive luxury real estate curated for the discerning.",
+  title: "Imrealty | Next-Generation Luxury Real Estate",
+  description: "Redefining architectural excellence with a fresh perspective. IM Realty curates bespoke living experiences and visionary spaces for the modern world.",
 };
 
 export default function RootLayout({
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSerif.variable} ${manrope.variable} font-sans antialiased bg-off-black text-white`}
+        className={`${cormorant.variable} ${inter.variable} font-sans antialiased bg-off-black text-white`}
       >
         {children}
       </body>

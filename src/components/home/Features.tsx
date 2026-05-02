@@ -7,38 +7,38 @@ const features = [
   {
     id: "A.01",
     icon: <Shield size={20} />,
-    title: "Cryptographic Security",
-    desc: "Military-grade encryption for all smart-home protocols and private entry management.",
+    title: "Multi-Tier Security",
+    desc: "AI-powered RFID vehicle entry, video door phones, and 24/7 centralized monitoring for absolute peace of mind.",
   },
   {
     id: "A.02",
     icon: <Zap size={20} />,
-    title: "Autonomous Integration",
-    desc: "AI-driven climate and lighting systems that learn and adapt to your circadian rhythm.",
+    title: "Smart Automation",
+    desc: "Next-gen home automation ready for Alexa & Google Home, controlling lighting, climate, and security from your smartphone.",
   },
   {
     id: "A.03",
-    icon: <Wind size={20} />,
-    title: "Biometric Filtration",
-    desc: "Hospital-standard HEPA filtration with real-time molecular monitoring of air quality.",
+    icon: <Droplets size={20} />,
+    title: "Sustainable Grid",
+    desc: "Advanced sewage treatment plants (STP) and rainwater harvesting systems exceeding IGBC Gold standards.",
   },
   {
     id: "A.04",
-    icon: <Droplets size={20} />,
-    title: "Regenerative Wellness",
-    desc: "Private spa facilities featuring red-light therapy and advanced hydro-recovery systems.",
+    icon: <Wind size={20} />,
+    title: "Vastu Brilliance",
+    desc: "Scientifically designed layouts optimized for natural cross-ventilation and positive energy flow in every room.",
   },
   {
     id: "A.05",
     icon: <Map size={20} />,
-    title: "Strategic Location",
-    desc: "Unmatched site selection based on privacy, architectural value, and future appreciation.",
+    title: "EV Infrastructure",
+    desc: "Dedicated high-speed electric vehicle charging points provided for every parking bay to power the future.",
   },
   {
     id: "A.06",
     icon: <Key size={20} />,
-    title: "Elite Concierge",
-    desc: "Direct access to a curated network of lifestyle managers for bespoke requirements.",
+    title: "Vertical Transit",
+    desc: "Precision Japanese elevators with 2.5m/s high-speed movement and automatic rescue devices (ARD).",
   },
 ];
 
@@ -47,9 +47,8 @@ const Features = () => {
     <section className="bg-[#0a0a0a] text-white py-24 md:py-40 px-6 md:px-24 overflow-hidden relative font-sans">
       {/* Cinematic Grid Layout - Following Hero */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
-        <div className="h-full w-[1px] bg-white absolute right-8 md:right-32 top-0" />
-        <div className="h-full w-[1px] bg-white absolute left-8 md:left-32 top-0" />
-        <div className="w-full h-[1px] bg-white absolute top-1/2 left-0" />
+        <div className="h-full w-[1px] bg-white absolute right-4 md:right-32 top-0 hidden md:block" />
+        <div className="h-full w-[1px] bg-white absolute left-4 md:left-32 top-0 hidden md:block" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -61,7 +60,7 @@ const Features = () => {
           <div className="w-[1px] h-32 bg-gradient-to-b from-primary-red to-transparent" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 md:mb-32 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 md:mb-32 items-start">
           <div className="lg:col-span-8 relative">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -69,10 +68,10 @@ const Features = () => {
               viewport={{ once: true }}
               transition={{ duration: 1 }}
             >
-              <span className="text-[80px] md:text-[180px] font-serif text-white/5 absolute -top-16 md:-top-32 -left-4 md:-left-16 pointer-events-none">
+              <span className="text-[60px] md:text-[180px] font-serif text-white/5 absolute -top-12 md:-top-32 -left-2 md:-left-16 pointer-events-none">
                 03
               </span>
-              <h2 className="text-4xl md:text-8xl font-bold uppercase tracking-tighter leading-none mb-8 md:mb-12 relative z-10">
+              <h2 className="text-3xl md:text-8xl font-bold uppercase tracking-tighter leading-none mb-8 md:mb-12 relative z-10">
                 Advanced <br /> 
                 <span className="text-primary-red italic font-serif">Infrastructure</span>
               </h2>
@@ -103,7 +102,7 @@ const Features = () => {
               className="group bg-[#0a0a0a] p-8 md:p-12 relative h-auto md:h-[380px] flex flex-col justify-between hover:bg-white/5 transition-all duration-700 overflow-hidden border border-transparent hover:border-primary-red/30"
             >
               {/* Background ID */}
-              <span className="absolute top-6 md:top-8 right-6 md:right-8 text-[10px] font-bold text-white/5 group-hover:text-primary-red/20 transition-colors tracking-[0.3em]">
+              <span className="absolute top-6 md:top-8 right-6 md:right-8 text-[10px] font-bold text-white/20 group-hover:text-primary-red/40 transition-colors tracking-[0.3em]">
                 {f.id}
               </span>
               
